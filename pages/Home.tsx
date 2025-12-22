@@ -129,7 +129,7 @@ const HomePage = () => {
               className="relative hidden lg:block">
               <div className="relative z-10 bg-white/10 backdrop-blur-xl p-3 rounded-[2.5rem] shadow-2xl border border-white/20">
                 <img
-                  src="../images/icons/pic-hp.png"
+                  src="/public/images/icons/pic-hp.png"
                   alt="App Dashboard Preview"
                   className="rounded-[2rem] w-full h-auto object-cover shadow-inner opacity-90 hover:opacity-100 transition-opacity p-4 duration-200"
                 />

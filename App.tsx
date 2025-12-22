@@ -63,7 +63,7 @@ const Header = () => {
                 <Recycle className="h-5 w-5 text-white" />
               </div> */}
               <img
-                src="images/logos/logo-wanigo.png"
+                src="/public/images/logos/logo-wanigo.png"
                 alt="WANIGO Logo"
                 className="nav-logo"
               />{" "}
@@ -148,7 +148,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-5">
             <div className="flex items-center gap-2 mb-6">
               <img
-                src="images/logos/logo-wanigo.png"
+                src="/public/images/logos/logo-wanigo.png"
                 alt="WANIGO Logo"
                 className="nav-logo"
                 style={{ width: "auto", height: "60px" }}
