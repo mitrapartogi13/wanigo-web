@@ -5,55 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WANIGO! - AI-Driven Waste Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap"
+      rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
             },
             colors: {
               brand: {
-                light: '#0A5AEB', // The lighter blue from image
-                dark: '#031E4E',  // The darker blue from image
+                light: "#0A5AEB", // The lighter blue from image
+                dark: "#031E4E", // The darker blue from image
               },
               primary: {
-                50: '#eff6ff',
-                100: '#dbeafe',
-                200: '#bfdbfe',
-                300: '#93c5fd',
-                400: '#60a5fa',
-                500: '#0A5AEB', // Main brand color
-                600: '#2563eb',
-                700: '#1d4ed8',
-                800: '#1e40af',
-                900: '#031E4E', // Dark brand color
-                950: '#172554',
-              }
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#0A5AEB", // Main brand color
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#031E4E", // Dark brand color
+                950: "#172554",
+              },
             },
             animation: {
-              'blob': 'blob 7s infinite',
-              'float': 'float 6s ease-in-out infinite',
-              'spin-slow': 'spin 12s linear infinite',
+              blob: "blob 7s infinite",
+              float: "float 6s ease-in-out infinite",
+              "spin-slow": "spin 12s linear infinite",
             },
             keyframes: {
               blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
               },
               float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              }
-            }
-          }
-        }
-      }
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
+      /* Gaya dasar untuk logo di navbar (Target: Mobile) */
+      .nav-logo {
+        /* Atur tinggi agar pas di navbar HP yang biasanya lebih pendek */
+        height: 40px;
+        padding-top: 4px;
+
+        /* 'width: auto' sangat PENTING. */
+        /* Ini menjaga agar gambar tidak gepeng. Lebar akan menyesuaikan tinggi secara otomatis. */
+        width: auto;
+
+        /* Memastikan gambar sejajar vertikal dengan teks di sebelahnya */
+        vertical-align: middle;
+
+        /* Opsional: Menambahkan sedikit jarak jika terlalu mepet dengan elemen lain */
+        /* margin-right: 10px; */
+      }
+
+      /* Media Query untuk Tablet dan Desktop (Layar > 768px) */
+      @media (min-width: 768px) {
+        .nav-logo {
+          /* Pada layar yang lebih besar, navbar biasanya lebih tinggi. */
+          /* Kita perbesar sedikit ukuran logonya. */
+          height: 45px;
+          padding-top: 4px;
+        }
+      }
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -61,30 +94,31 @@
         background: #f8fafc;
       }
       ::-webkit-scrollbar-thumb {
-        background: #0A5AEB;
+        background: #0a5aeb;
         border-radius: 10px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #031E4E;
+        background: #031e4e;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "recharts": "https://esm.sh/recharts@^3.6.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body class="bg-white text-slate-800 antialiased selection:bg-brand-light selection:text-white">
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "react": "https://esm.sh/react@^19.2.3",
+          "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+          "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+          "recharts": "https://esm.sh/recharts@^3.6.0"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body
+    class="bg-white text-slate-800 antialiased selection:bg-brand-light selection:text-white">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
