@@ -96,17 +96,20 @@ const MembersPage = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="bg-white p-6 rounded-[2.5rem] shadow-xl border border-slate-100">
-          <div className="rounded-[2rem] overflow-hidden relative group h-[400px] md:h-[500px]">
+          {/* PERBAIKAN: Gunakan aspect-video (16:9) atau aspect-[4/3] agar sesuai rasio foto asli pada mobile */}
+          <div className="rounded-[2rem] overflow-hidden relative group aspect-[4/3] sm:aspect-video md:aspect-auto md:h-[500px]">
             <img
               src="/images/foto-tim/fotbar-team.png"
               alt="Wanigo Team Together"
               className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#031E4E]/90 via-[#031E4E]/20 to-transparent p-10 flex flex-col justify-end">
-              <h3 className="text-white text-3xl font-bold mb-2">
+
+            {/* PERBAIKAN: Sesuaikan padding (p-6) dan ukuran font (text-xl) agar muat di tampilan mobile yang lebih pendek */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#031E4E]/90 via-[#031E4E]/20 to-transparent p-6 md:p-10 flex flex-col justify-end">
+              <h3 className="text-white text-xl md:text-3xl font-bold mb-1 md:mb-2">
                 WANIGO! Family
               </h3>
-              <p className="text-sky-200 text-lg">
+              <p className="text-sky-200 text-sm md:text-lg">
                 One vision, one team, for a cleaner Indonesia.
               </p>
             </div>
@@ -144,7 +147,7 @@ const TeamCard = ({
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover object-center object-top transition-transform duration-700 group-hover:scale-110"
       />
       {/* Social Overlay */}
       <div className="absolute bottom-4 right-4 flex gap-2 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
