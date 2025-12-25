@@ -101,7 +101,7 @@ const MembersPage = () => {
             <img
               src="/images/foto-tim/fotbar-team.png"
               alt="Wanigo Team Together"
-              className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
+              className="w-full h-full object-cover filter grayscale-0 group-hover:grayscale transition-all duration-1000 transform group-hover:scale-105"
             />
 
             {/* PERBAIKAN: Sesuaikan padding (p-6) dan ukuran font (text-xl) agar muat di tampilan mobile yang lebih pendek */}
@@ -121,6 +121,7 @@ const MembersPage = () => {
 };
 
 // Extracted Component for cleaner code
+// Extracted Component for cleaner code
 const TeamCard = ({
   member,
   isLeader = false,
@@ -133,22 +134,24 @@ const TeamCard = ({
       hidden: { opacity: 0, y: 30 },
       show: { opacity: 1, y: 0 },
     }}
-    className={`bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 group border border-slate-100 ${
-      isLeader ? "md:h-[450px]" : ""
-    }`}>
-    {/* Ganti h-72 dengan aspect-square (atau aspect-[3/4]) untuk mobile, dan kembalikan h-72 hanya di layar medium ke atas (md:h-72) */}
-    <div
-      className={`relative overflow-hidden ${
-        isLeader
-          ? "aspect-[3/4] md:h-[75%]"
-          : "aspect-square md:aspect-auto md:h-72"
-      }`}>
-      {" "}
+    // Hapus 'md:h-[450px]' agar tinggi kartu tidak dipaksa statis
+    // Tambahkan 'flex flex-col' agar layout rapi
+    className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 group border border-slate-100 flex flex-col">
+    {/* PERBAIKAN UTAMA:
+      1. Hapus class 'aspect-[3/4]', 'aspect-square', 'md:h-[75%]', 'md:h-72'.
+      2. Gunakan 'w-full' pada container agar lebar mengikuti grid responsif.
+    */}
+    <div className="relative overflow-hidden w-full">
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover object-center object-top transition-transform duration-700 group-hover:scale-110"
+        // PERBAIKAN IMAGE:
+        // 1. 'w-full h-auto': Lebar penuh, tinggi menyesuaikan rasio asli (tidak gepeng/terpotong).
+        // 2. Hapus 'object-cover' agar foto tidak di-crop.
+        // 3. 'block': Menghapus gap kecil di bawah gambar inline.
+        className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
       />
+
       {/* Social Overlay */}
       <div className="absolute bottom-4 right-4 flex gap-2 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
         {member.linkedin && (
@@ -172,6 +175,7 @@ const TeamCard = ({
       </div>
     </div>
 
+    {/* Text Content */}
     <div className="p-6">
       <h3
         className={`font-bold text-slate-900 group-hover:text-[#0A5AEB] transition-colors ${
