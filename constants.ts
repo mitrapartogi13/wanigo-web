@@ -57,7 +57,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Akthar Ibrahim',
     role: 'CEO & Founder',
     category: 'leader',
-    image: 'https://picsum.photos/400/400?random=1',
+    image: '/images/foto-tim/ceo-akthar.png',
     linkedin: 'https://linkedin.com',
     instagram: 'https://instagram.com'
   },
