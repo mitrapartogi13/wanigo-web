@@ -102,7 +102,7 @@ const MembersPage = () => {
         >
           <div className="rounded-[2rem] overflow-hidden relative group h-[400px] md:h-[500px]">
             <img 
-              src="https://picsum.photos/1200/600?grayscale" 
+              src="/images/foto-tim/fotbar-team.png" 
               alt="Wanigo Team Together" 
               className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
             />
